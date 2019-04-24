@@ -13,9 +13,13 @@ class Container extends Component {
 
 
     handleConvert() {
-      const convert = this.state.convert;
+      // const convert = this.state.convert;
       const number = document.getElementById('number');
-      // (100°F − 32) × 5/9 = 37.778°C
+      // F to C
+      // (n − 32) × 5/9 = x
+      // C to F
+      // (n × 9/5) + 32 = x
+
       const n = number.value;
       console.log((n-32)*(5/9));
 

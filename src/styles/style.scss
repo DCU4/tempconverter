@@ -1,14 +1,34 @@
-html, body {
-    background:beige;
-    font-family: Arial, Helvetica, sans-serif;
+html,
+body {
+  background: beige;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.converter {
-    display:flex;
+main {
+  h1 {
+    text-align: center;
+  }
+  .converter {
+    display: flex;
     flex-direction: column;
     width: 50%;
     margin: 0 auto;
-    input {
-        margin-bottom: 10px;
+    .selector {
+      display:flex;
+      justify-content: space-around;
+      p {
+        border: 1px solid black;
+        padding: 10px;
+        color: black;
+        background: transparent;
+        &.selected {
+          background: black;
+          color: white;
+        }
+      }
     }
+    input {
+      margin-bottom: 10px;
+    }
+  }
 }
