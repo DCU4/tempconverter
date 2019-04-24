@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/DCU4/tempconverter/issues"
   },
-  "homepage": "https://github.com/DCU4/tempconverter",
+  "homepage": "https://github.com/DCU4/tempconverter/dist/",
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
