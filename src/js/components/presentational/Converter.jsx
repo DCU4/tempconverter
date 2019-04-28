@@ -17,15 +17,18 @@ export class Converter extends Component {
     number.value = "";
 
     this.setState({
-      isSelected: handle,
-      // converter: this.props.handleFtoC ? this.props.handleCtoF : this.props.handleFtoC
+      isSelected: handle
     })
   }
 
 render() {
   const isSelected = this.state.isSelected;
   const isDisabled = this.state.isDisabled;
-  // let error =
+  const styles = {
+    isWhite: 'white',
+    isBlack: 'black'
+  }
+
 
     return (
       <div className="converter">
@@ -47,6 +50,7 @@ render() {
           <span>{!isSelected ? 'F' : 'C'}&#176;</span>
         </div>
         <button
+          style={(this.props.convert < 32) ? {color: styles.isWhite} : {color: styles.isBlack}}
           disabled={isDisabled}
           onClick={!isSelected ? this.props.handleFtoC : this.props.handleCtoF}
         >Convert</button>
