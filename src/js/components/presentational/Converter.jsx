@@ -24,6 +24,7 @@ export class Converter extends Component {
 render() {
   const isSelected = this.state.isSelected;
   const isDisabled = this.state.isDisabled;
+  const deg = <span>&#176;</span>; // degree symbol
   const styles = {
     isWhite: 'white',
     isBlack: 'black'
@@ -34,10 +35,10 @@ render() {
       <div className="converter">
         <div className="selector">
           <p className={!isSelected ? 'selected' : ''} onClick={!isSelected ? null : this.handleChange} id="FtoC">
-            <span>F&#176;</span> to <span>C&#176;</span>
+            <span>F{deg}</span> to <span>C{deg}</span>
           </p>
           <p className={isSelected ? 'selected' : ''} onClick={isSelected ? null : this.handleChange} id="CtoF">
-            <span>C&#176;</span> to <span>F&#176;</span>
+            <span>C{deg}</span> to <span>F{deg}</span>
           </p>
         </div>
         <div className="input-container">
@@ -47,14 +48,14 @@ render() {
             type="number"
             placeholder={!isSelected ? '32' : '0'}
           />
-          <span>{!isSelected ? 'F' : 'C'}&#176;</span>
+          <span>{!isSelected ? 'F' : 'C'}{deg}</span>
         </div>
         <button
           style={(this.props.convert < 32) ? {color: styles.isWhite} : {color: styles.isBlack}}
           disabled={isDisabled}
           onClick={!isSelected ? this.props.handleFtoC : this.props.handleCtoF}
         >Convert</button>
-        <p id="converted">Converted: {!isSelected ? this.props.convert+' C' : (this.props.convert == 0 ? 32 : this.props.convert)+' F'}&#176;</p>
+        <p id="converted">Converted: {!isSelected ? this.props.convert+' C' : (this.props.convert == 0 ? 32 : this.props.convert)+' F'}{deg}</p>
       </div>
 
     );
